@@ -65,6 +65,7 @@ export async function getFeed(props: {site?: URL}): Promise<HydratedFeedItem[]> 
       ...event,
       data: {
         ...event.data,
+        meetupImage: event.data.meetupImage && link(event.data.meetupImage), // <-- added
         banner: event.data.banner && link(event.data.banner),
       },
       presentations,
